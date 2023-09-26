@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Roboto','Raleway', sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-[#ecf0f3] text-[#1f2937] tracking-wide
+  }
+
+  h1, h2, h3, h5, h6 {
+    @apply font-bold
+  }
+
+  h6{
+    @apply text-xl font-[sans-serif]
+  }
+
+  h1 {
+    @apply text-4xl sm:text-5xl md:text-6xl font-[Roboto]
+  }
+
+  h2 {
+    @apply text-3xl sm:text-4xl
+  }
+  
+  li {
+    @apply cursor-pointer
+  }
+
+  button {
+    @apply shadow-xl shadow-gray-400 rounded-xl uppercase bg-gradient-to-r from-[#5651e5] to-[#709dff] text-white
+  }
+ 
+}
+
+/* Counter */
+
+@property --num {
+        syntax: '<integer>';
+        initial-value: 0;
+        inherits: false;
+    }
+@keyframes counter {
+        from {
+            --num: 0;
+        }
+        to {
+            --num: 10;
+        }
+    }    
+
+    @property --num1 {
+      syntax: '<integer>';
+      initial-value: 0;
+      inherits: false;
+  }
+@keyframes counter1 {
+      from {
+          --num1: 0;
+      }
+      to {
+          --num1: 13;
+      }
+  }   
+
+  @property --num2 {
+    syntax: '<integer>';
+    initial-value: 0;
+    inherits: false;
+    
+}
+@keyframes counter2 {
+    from {
+        --num2: 0;
+    }
+    to {
+        --num2: 3;
+    }
+}
+
+/* Loader */
+
+.loader {
+  --dim: 3rem;
+  width: var(--dim);
+  height: var(--dim);
+  position: relative;
+  animation: spin988 2s linear infinite;
+}
+
+.loader .circle {
+  --color: #333;
+  --dim: 1.2rem;
+  width: var(--dim);
+  height: var(--dim);
+  background-color: var(--color);
+  border-radius: 50%;
+  position: absolute;
+}
+
+.loader .circle:nth-child(1) {
+  top: 0;
+  left: 0;
+}
+
+.loader .circle:nth-child(2) {
+  top: 0;
+  right: 0;
+}
+
+.loader .circle:nth-child(3) {
+  bottom: 0;
+  left: 0;
+}
+
+.loader .circle:nth-child(4) {
+  bottom: 0;
+  right: 0;
+}
+
+@keyframes spin988 {
+  0% {
+    transform: scale(1) rotate(0);
+  }
+
+  20%, 25% {
+    transform: scale(1.3) rotate(90deg);
+  }
+
+  45%, 50% {
+    transform: scale(1) rotate(180deg);
+  }
+
+  70%, 75% {
+    transform: scale(1.3) rotate(270deg);
+  }
+
+  95%, 100% {
+    transform: scale(1) rotate(360deg);
+  }
+}
